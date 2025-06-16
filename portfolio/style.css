@@ -188,6 +188,29 @@ nav.sticky .menu-btn {
   animation: slideInLeft 1s ease-out forwards;
   opacity: 0;
 }
+.typing-text {
+  font-size: 40px;
+  font-weight: 600;
+  color: #0E2431;
+  white-space: pre-line;
+  line-height: 1.6;
+  border-right: none;
+  width: fit-content;
+  min-height: 200px;
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 0.7s infinite;
+  font-weight: 600;
+  color: #4070f4;
+  margin-left: 5px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
 .home .text-one {
   animation-delay: 0.2s;
@@ -205,12 +228,28 @@ nav.sticky .menu-btn {
   animation-delay: 0.8s;
 }
 
+.typing-text {
+  font-size: 40px;
+  font-weight: 600;
+  color: #0E2431;
+  white-space: pre-line;
+  line-height: 1.6;
+  border-right: 3px solid #4070f4;
+  width: fit-content;
+  animation: blinkCursor 0.8s steps(1) infinite;
+  min-height: 200px;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #4070f4; }
+}
 @keyframes slideInLeft {
-  0% {
+  from {
     transform: translateX(-100%);
     opacity: 0;
   }
-  100% {
+  to {
     transform: translateX(0);
     opacity: 1;
   }
@@ -318,6 +357,43 @@ section .topic {
   color: #0E2431;
   margin-right: 23px;
 }
+/* Hiệu ứng trượt từ trái */
+.slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+/* Hiệu ứng trượt từ trái */
+.slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hiệu ứng trượt từ phải */
+.slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 
 /* Career Section: Kiểu dáng cho phần Sự nghiệp với trình độ học vấn và mục tiêu */
 .career .boxes {
@@ -396,6 +472,22 @@ section .topic {
   color: #4070f4;
   margin-bottom: 8px;
 }
+/* Hiệu ứng trượt từ dưới lên */
+.slide-in-up {
+  animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* Hobbies Section: Tạo kiểu cho phần Sở thích với các hộp giống như thẻ */
 .hobbies {
@@ -460,6 +552,17 @@ section .topic {
 .hobbies-details .box:hover .topic,
 .hobbies-details .box:hover p {
   color: #fff;
+}
+/* Hiệu ứng hiện lên */
+.hobbies-details.visible .box {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hobbies-details .box {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: all 1s ease-out;
 }
 
 /* Skills Section: Định dạng cho phần Ngôn ngữ và Kỹ năng */
@@ -576,6 +679,21 @@ section .topic {
 .skills .boxes .box:hover .topic {
   color: #fff;
 }
+/* Hiệu ứng trượt từ dưới lên */
+.slide-in-up {
+  animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* Achievements Section: Kiểu dáng cho phần Chứng chỉ & Giải thưởng */
 .achievements .boxes {
@@ -650,6 +768,16 @@ section .topic {
   color: #4070f4;
   border: 1px solid #4070f4;
 }
+.achievements .boxes .box {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: all 1s ease-out;
+}
+
+.achievements.visible .boxes .box {
+  opacity: 1;
+  transform: scale(1);
+}
 
 /* Projects Section: Kiểu dáng cho phần Dự án của tôi */
 .projects .boxes {
@@ -707,6 +835,17 @@ section .topic {
   font-size: 18px;
   padding: 6px 12px;
 }
+.projects .boxes .box {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: all 1s ease-out;
+}
+
+.projects.visible .boxes .box {
+  opacity: 1;
+  transform: scale(1);
+}
+
 
 /* Project Detail Sections:  Default Prediction and Tetris Game sections */
 .project-detail .boxes .box {
@@ -789,6 +928,24 @@ section .topic {
 #tetris-game .sub-box:hover * {
   color: #0E2431 !important;
 }
+.slide-in-up {
+  animation: slideInUp 0.8s ease-out;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* Contact Section */
 .contact {
@@ -816,6 +973,21 @@ section .topic {
   font-size: 18px;
   margin: 0 6px;
 }
+.slide-in-up {
+  animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* Footer Section */
 footer {
